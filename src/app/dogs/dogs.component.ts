@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { FavService } from "../fav/fav.service";
 type breed = {
   name: string;
   type: string;
@@ -16,7 +17,7 @@ export class DogsComponent implements OnInit {
   selectedBreed: string = "affenpinscher";
   imageUrl: string = "";
 
-  constructor() {
+  constructor(private favService: FavService) {
     this.init();
   }
 
@@ -92,6 +93,8 @@ export class DogsComponent implements OnInit {
   }
 
   addToFav() {
-    this.favourites.push(this.selectedBreed);
+    this.favService.addToFavourites(this.selectedBreed);
+    alert(`Dodano rasę ${this.selectedBreed} do ulubionych.`);
+    // this.favourites.push(this.selectedBreed);
   }
 }
