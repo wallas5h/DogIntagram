@@ -1,0 +1,50 @@
+<div class="wrapper">
+  <div class="select__wrapper">
+    <label>Wybierz rasę:</label>
+    <div>
+      <label for="dogs"></label>
+      <select
+        name="dogs"
+        id="dogs-select"
+        [(ngModel)]="selectedBreed"
+        (change)="handleSelect()"
+      >
+        <ng-container *ngFor="let breed of breeds; let i=index">
+          <option value="{{breed.name}}">{{breed.name}}</option>
+        </ng-container>
+      </select>
+    </div>
+  </div>
+
+  <div class="content__wrapper">
+    <div class="title">
+      <h4>{{selectedBreed}}</h4>
+    </div>
+    <button (click)="handleSelect()">
+      <i class="fa fa-chevron-left" aria-hidden="true"></i>
+    </button>
+
+    <div class="dog">
+      <i class="fa fa-heart" aria-hidden="true" (click)="addToFav()"></i>
+      <div class="dog__background"></div>
+      <div class="dog__image">
+        <img src="{{imageUrl}}" alt="{{selectedBreed}}" />
+      </div>
+    </div>
+    <button (click)="handleSelect()">
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </button>
+
+    <div class="content__description">
+      <p>
+        Poczytaj więcej o tej rasie na wikipedii :
+        <a
+          href="https://en.wikipedia.org/wiki/{{selectedBreed}}"
+          target="_blank"
+        >
+          {{selectedBreed}}</a
+        >
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<h4>Twoje ulubione rasy psów:</h4>
+<div *ngFor="let breed of favourites; let i=index">
+  <div>
+    <a href="https://en.wikipedia.org/wiki/{{breed}}" target="_blank">
+      {{breed}}</a
+    >
+  </div>
+</div>
