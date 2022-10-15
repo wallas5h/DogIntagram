@@ -6,6 +6,7 @@ import { FavComponent } from "./dogs/fav/fav.component";
 const routes: Routes = [
   { path: "", component: DogsComponent },
   { path: "favourites", component: FavComponent },
+  { path: "**", redirectTo: "", pathMatch: "full" },
 ];
 
 @NgModule({
