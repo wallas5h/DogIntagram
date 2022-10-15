@@ -1,18 +1,20 @@
-<nav class="">
-  <div>
-    <button>
-      <a routerLink="/"
-        ><span class="material-symbols-outlined"> pets </span>Psintagram</a
-      >
-    </button>
-  </div>
-  <div class="nav__links">
-    <a routerLink="/favourites">Fav</a>
-    <a routerLink="/login">Login</a>
-    <a routerLink="/register">Register</a>
-  </div>
-</nav>
+<div class="container">
+  <nav class="">
+    <div>
+      <button>
+        <a routerLink="/"
+          ><span class="material-symbols-outlined"> pets </span>Psintagram</a
+        >
+      </button>
+    </div>
+    <div class="nav__links">
+      <a routerLink="/favourites">
+        <i class="fa fa-heart" aria-hidden="true"></i>
+      </a>
+    </div>
+  </nav>
 
-<div class="">
-  <router-outlet></router-outlet>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
 </div>
