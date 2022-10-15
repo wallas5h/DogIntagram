@@ -1,0 +1,156 @@
+select {
+  width: 200px;
+  height: 30px;
+  // text-align: center;
+
+  option {
+    height: 40px;
+    color: tear;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas: "select content";
+  max-width: 800px;
+  column-gap: 100px;
+  margin: 0 auto;
+  overflow: hidden;
+  place-content: space-between;
+
+  @media (max-width:600px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "select "
+      "content";
+  }
+}
+
+.select__wrapper {
+  grid-area: select;
+
+  label {
+    display: inline-block;
+    line-height: 100%;
+    margin: 0 10px;
+
+    @media (max-width:600px) {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width:600px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.content__wrapper {
+  grid-area: content;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+
+  .title {
+    display: flex;
+    justify-content: center;
+    flex-basis: 100%;
+
+    h4 {
+      display: inline-block;
+      width: 80%;
+      text-align: center;
+      text-transform: capitalize;
+    }
+
+    i {
+      display: inline-block;
+      width: 10%;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: tear;
+
+    i {
+      font-size: 30px;
+      color: tear;
+    }
+  }
+
+  .content__description {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    width: 100%;
+
+    a {
+      color: tear;
+      text-transform: capitalize;
+      text-decoration: none;
+
+      &:hover {
+        color: teal;
+      }
+    }
+  }
+}
+
+.dog {
+  flex: 1;
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  i {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: red;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 999;
+
+    &:hover {
+      color: teal;
+    }
+  }
+}
+
+.dog__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 80%;
+  height: 80%;
+
+  margin: -5%;
+
+  background-size: cover;
+
+  padding: 10px;
+
+  filter: blur(10px);
+
+
+}
+
+.dog__image {
+  position: relative;
+  z-index: 2;
+
+  img {
+    width: 100%;
+    max-height: 100%;
+  }
+
+
+}
