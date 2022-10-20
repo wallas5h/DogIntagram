@@ -1,0 +1,8 @@
+<div class="onefav__wrapper">
+  <ng-container *ngIf="isReady">
+    <img src="{{image}}" alt="{{breed}}" (mouseover)="loadImage()" />
+  </ng-container>
+  <a href="https://en.wikipedia.org/wiki/{{breed}}" target="_blank">
+    {{breed}}</a
+  >
+</div>
