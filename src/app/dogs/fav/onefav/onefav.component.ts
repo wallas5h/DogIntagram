@@ -13,6 +13,7 @@ export class OnefavComponent implements OnInit {
   constructor() {}
 
   apiUrl = "https://dog.ceo/api";
+  intervalId: any = 0;
 
   ngOnInit(): void {
     this.loadImage();
@@ -38,5 +39,16 @@ export class OnefavComponent implements OnInit {
       .then((resp) => resp.json())
       .then((data) => data.message)
       .then((img) => img);
+  }
+
+  startInterval() {
+    this.intervalId = setInterval(() => {
+      this.loadImage();
+    }, 1000);
+  }
+
+  clearIntervalId() {
+    clearInterval(this.intervalId);
+    console.log("działa");
   }
 }

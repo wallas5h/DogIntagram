@@ -1,7 +1,6 @@
 <h4>Twoje ulubione rasy psów:</h4>
-<div>
+<div class="favourites__wrapper">
   <ng-container *ngFor="let fav of favourites; let i=index">
     <app-onefav [breed]="fav"></app-onefav>
   </ng-container>
-  <div></div>
 </div>
