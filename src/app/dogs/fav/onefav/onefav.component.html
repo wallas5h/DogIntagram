@@ -1,0 +1,17 @@
+<div class="onefav__wrapper">
+  <ng-container *ngIf="isReady">
+    <div class="image">
+      <img
+        src="{{image}}"
+        alt="{{breed}}"
+        (mouseover)="startInterval()"
+        (mouseleave)="clearIntervalId()"
+      />
+    </div>
+  </ng-container>
+  <span>
+    <a href="https://en.wikipedia.org/wiki/{{breed}}" target="_blank">
+      {{breed}}</a
+    >
+  </span>
+</div>
